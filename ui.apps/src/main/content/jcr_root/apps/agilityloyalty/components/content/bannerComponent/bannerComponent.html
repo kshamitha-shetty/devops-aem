@@ -1,0 +1,26 @@
+<!--/*
+  Container Component.
+*/-->
+<h3 data-sly-test.mode="${!properties.heading && (wcmmode.edit || wcmmode.design)}">Configure Container Component.</h3>
+<sly data-sly-use.bannerModel="com.rnd.agilityloyalty.core.models.BannerComponent"/>
+
+<section class="us-banner" data-sly-test.heading="${properties.heading}">
+    <div class="us-container">
+        <h1 class="us-head-text">${heading}</h1>
+    </div>
+    <div class="banner-wrap usb-banner-slider" data-sly-test.bannerList="${bannerModel.bannerList}"
+         data-sly-list="${bannerList}">
+        <div class="banner-content">
+            <div class="banner-img">
+                <picture data-sly-test.image="${item.image}">
+                    <source media="(max-width: 767px)" srcset="${item.imageMobile}">
+                    <img src="${image}" alt="image" style="width:auto">
+                </picture>
+            </div>
+<!--             <div class="banner-cta" data-sly-test.link="${item.linkUrl}"><a class="btn btn-usbanner" href="${link}">${item.label} -->
+			<div class="banner-cta" data-sly-test.link="${item.linkUrl}">
+              <a class="btn btn-usbanner" href="${link}">${item.label}</a>
+            </div>
+        </div>
+    </div>
+</section>
